@@ -32,6 +32,7 @@
 @import './imports/_images';
 @import './imports/_background-size';
 @import './imports/_background-position';
+@import './imports/_background-overlay';
 @import './imports/_outlines';
 @import './imports/_borders';
 @import './imports/_border-radius';
