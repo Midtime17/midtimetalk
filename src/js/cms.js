@@ -2,7 +2,7 @@ import React from "react";
 import CMS from "netlify-cms";
 
 import PostPreview from "./cms-preview-templates/post";
-import PostPreview1 from "./cms-preview-templates/post";
+import PostPreview1 from "./cms-preview-templates/post1";
 import ProductsPreview from "./cms-preview-templates/products";
 
 
