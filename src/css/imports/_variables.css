@@ -1,6 +1,6 @@
 :root {
 	/* Colors */
-	--primary: rgb(0, 174, 255);
+	--primary: rgb(226, 113, 166);
 	--highlight: rgba(254, 213, 198, 1);
 	--white: rgba(255, 255, 255, 1);
 	--off-white: rgba(255, 253, 252, 1);
@@ -8,7 +8,7 @@
 	--grey-2: rgba(235, 231, 230, 1);
 	--grey-3: rgba(89, 87, 86, 1);
 	--grey-4: rgba(66, 64, 64, 1);
-	--black: rgba(43, 37, 35, 1);
+	--grey-5: rgb(245, 245, 245);
 
 	/* Typography */
 	--font-family: Nunito Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
