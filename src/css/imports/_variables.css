@@ -1,8 +1,22 @@
+@font-face {
+	font-family: 'lillybelle';
+	src: url('../fonts/LillyBelle_2.woff') format('woff'),
+		 url('../fonts/LillyBelle_2.woff2') format('woff2');
+	}
+	
+@font-face {
+	font-family: 'Efja';
+	src: url('../fonts/Efja.woff2') format('woff2'),
+		 url('../fonts/Efja.woff') format('woff'),
+		url('../fonts/Efja.ttf') format('truetype');
+	}
+
+
 :root {
 	/* Colors */
-	--primary: rgb(226, 113, 166);
-	--highlight: rgba(254, 213, 198, 1);
-	--white: rgba(255, 255, 255, 1);
+	--primary: #F46A8B;
+	--highlight: #AFEFE7;
+	--white: #f8f7f7;
 	--off-white: rgba(255, 253, 252, 1);
 	--grey-1: rgba(245, 243, 242, 1);
 	--grey-2: rgba(235, 231, 230, 1);

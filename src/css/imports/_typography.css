@@ -1,4 +1,4 @@
-html {
+ html {
   font-size: var(--font-size);
   @media (--breakpoint-medium) {
     font-size: var(--font-size-m);
@@ -8,7 +8,6 @@ html {
   }
   background-color: var(--black);
 }
-
 
 body {
   font-family: var(--font-family);
