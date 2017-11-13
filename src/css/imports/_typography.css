@@ -18,7 +18,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--off-white);
  }
-
+ 
 p {
   margin-bottom: var(--spacing-medium);
   max-width: 32rem;
