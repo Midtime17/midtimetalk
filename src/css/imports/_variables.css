@@ -1,15 +1,25 @@
+
 @font-face {
-	font-family: 'lillybelle';
-	src: url('../fonts/LillyBelle_2.woff') format('woff'),
-		 url('../fonts/LillyBelle_2.woff2') format('woff2');
+	font-family: 'Satisfy-Regular';
+	src: url('../fonts/Satisfy-Regular.woff') format('woff'),
+			url('../fonts/Satisfy-Regular.ttf') format('truetype'),
+		url('../fonts/Satisfy-Regular.woff2') format('woff2');
 	}
-	
+
 @font-face {
-	font-family: 'Efja';
-	src: url('../fonts/Efja.woff2') format('woff2'),
-		 url('../fonts/Efja.woff') format('woff'),
-		url('../fonts/Efja.ttf') format('truetype');
+	font-family: 'Cookie-Regular';
+	src: url('../fonts/Cookie-Regular.woff') format('woff'),
+			url('../fonts/Cookie-Regular.ttf') format('truetype'),
+		url('../fonts/Cookie-Regular.woff2') format('woff2');
 	}
+
+@font-face {
+	font-family: 'Cardo-Regular';
+	src: url('../fonts/Cardo-Regular') format('woff2'),
+		 url('../fonts/Cardo-Regular.woff') format('woff'),
+		url('../fonts/Cardo-Regular.ttf') format('truetype');
+	}
+
 
 
 :root {
