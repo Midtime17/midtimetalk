@@ -1,9 +1,9 @@
 <div class="bg-off-white pv4"> 
 	<div class="ph3 mw7 center">
 
-		<h2 class="f2 b lh-title tc mb3" style='font-family: cardo-regular'>Read it 🥂.</h2>
+		<h2 class="f2 b lh-title tc mb3" style='color: #afefe7;font-family:satisfy'>Read it 🥂.</h2>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3" style='font-family: Cardo-regular'>
+		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3" style='font-family: Cardo'>
 			{{ range where .Data.Pages "Type" "post" }}
 			<div class="ph1-ns w-50-ns flex">
 				{{ .Render "li" }}
@@ -11,13 +11,7 @@
 			{{ end }}
 		</div>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range where .Data.Pages "Type" "post1" }}
-			<div class="ph1-ns w-50-ns flex">
-				{{ .Render "li" }}
-			</div>
-			{{ end }}
-		</div>
+
 
 		<div class="tc">
 			<a href="/post" class="btn raise">Read more</a>

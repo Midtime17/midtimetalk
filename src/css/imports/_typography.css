@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: var(--Cardo-Regular);
+
   font-size: var(--spacing-medium);
   line-height: var(--line-height);
   font-weight: var(--body-font-weight);

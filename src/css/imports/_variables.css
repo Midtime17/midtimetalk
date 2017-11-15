@@ -1,25 +1,4 @@
 
-@font-face {
-	font-family: 'Satisfy-Regular';
-	src: url('../fonts/Satisfy-Regular.woff') format('woff'),
-			url('../fonts/Satisfy-Regular.ttf') format('truetype'),
-		url('../fonts/Satisfy-Regular.woff2') format('woff2');
-	}
-
-@font-face {
-	font-family: 'Cookie-Regular';
-	src: url('../fonts/Cookie-Regular.woff') format('woff'),
-			url('../fonts/Cookie-Regular.ttf') format('truetype'),
-		url('../fonts/Cookie-Regular.woff2') format('woff2');
-	}
-
-@font-face {
-	font-family: 'Cardo-Regular';
-	src: url('../fonts/Cardo-Regular') format('woff2'),
-		 url('../fonts/Cardo-Regular.woff') format('woff'),
-		url('../fonts/Cardo-Regular.ttf') format('truetype');
-	}
-
 
 
 :root {
@@ -29,8 +8,8 @@
 	--white: #f8f7f7;
 	--off-white: rgba(255, 253, 252, 1);
 	--grey-1: #dddbdb;
-	--grey-2: rgb(255, 255, 255);
-	--grey-3: rgba(89, 87, 86, 1);
+	--grey-2: #ffffff;
+	--grey-3: #cddc39;
 	--grey-4: rgba(66, 64, 64, 1);
 	--grey-5: rgb(245, 245, 245);
 
