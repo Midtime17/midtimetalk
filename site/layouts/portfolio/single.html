@@ -1,33 +1,20 @@
+
 {{ partial "head" . }}
-
 {{ partial "nav" . }}
-
+{{ partial "jumbotron" (dict "imageUrl" "/img/about/jumbotron.jpg" "title" "Our Work") }}
 <div class="ph3 bg-off-white">
-	<div class="center mw6 pv3">
+	<div class="mw7 center ph3 pt4">
 
-		<img src="../img/logo.png" alt="" class="db w4 center pv4">
-
-		<p>We’d love to get in touch with you and hear your ideas and questions. We strive to grow and improve constantly and your feedback is valuable for us.</p>
-
-		<h3 class="f4 b lh-title mb2">How can I get…?</h3>
-		<p>You can also use the form below for any inquiries about coffee availability, monthly subscriptions and scheduling a 1-on-1 session with our baristas. Don’t be shy, drop us a line!</p>
-
-		<div class="flex-ns mb3">
-
-			<div>
-				<h4 class="f4 b lh-title mb2 primary">Location</h4>
-				<p>3153 Lynn Avenue, South San Francisco, California 94080</p>
-			</div>
-
-			<div>
-				<h4 class="f4 b lh-title mb2 primary">Working hours</h4>
-				<p>Monday – Saturday: 9AM – 7PM We’re closed on Sundays</p>
-			</div>
-
-		</div>
-
-		{{ partial "contact-form" . }}
-
+		{{ partial "media-block" (dict "heading" "Logo Design" "text" "info about what we do" "imageUrl" "/img/about/shade-grown.jpg") }}
+		
+		{{ partial "media-block-reverse" (dict "heading" "Corporate Identity" "text" "info about this" "imageUrl" "/img/about/single-origin.jpg") }}
+		
+		{{ partial "media-block" (dict "heading" "Sustainable farming" "text" "Sustainable agriculture is farming in sustainable ways based on an understanding of ecosystem services, the study of relationships between organisms and their environment. What grows where and how it is grown are a matter of choice and careful consideration for nature and communities." "imageUrl" "/img/about/sustainable-farming.jpg") }}
+		
+		{{ partial "media-block-reverse" (dict "heading" "Direct sourcing" "text" "Direct trade is a form of sourcing practiced by some coffee roasters. Advocates of direct trade practices promote direct communication and price negotiation between buyer and farmer, along with systems that encourage and incentivize quality." "imageUrl" "/img/about/direct-sourcing.jpg") }}
+		
+		{{ partial "media-block" (dict "heading" "Reinvest profits" "text" "We want to truly empower the communities that bring amazing coffee to you. That’s why we reinvest 20% of our profits into farms, local businesses and schools everywhere our coffee is grown. You can see the communities grow and learn more about coffee farming on our blog." "imageUrl" "/img/about/reinvest-profits.jpg") }}
+		
 	</div>
 </div>
 

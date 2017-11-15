@@ -1,4 +1,4 @@
-html {
+ html {
   font-size: var(--font-size);
   @media (--breakpoint-medium) {
     font-size: var(--font-size-m);
@@ -9,9 +9,8 @@ html {
   background-color: var(--black);
 }
 
-
 body {
-  font-family: var(--font-family);
+
   font-size: var(--spacing-medium);
   line-height: var(--line-height);
   font-weight: var(--body-font-weight);
@@ -20,9 +19,18 @@ body {
   background-color: var(--off-white);
  }
 
+ h2, h1, h3, h4 {
+   font-family: 'Satisfy'
+ }
+
+ fieldset {
+   font-family: 'Cardo'
+ }
+ 
 p {
   margin-bottom: var(--spacing-medium);
   max-width: 32rem;
+  font-family: 'Cardo'
 }
 
 strong {

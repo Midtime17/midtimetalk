@@ -1,9 +1,9 @@
-<div class="bg-off-white pv4">
+<div class="bg-off-white pv4"> 
 	<div class="ph3 mw7 center">
 
-		<h2 class="f2 b lh-title mb3">Ultima historia</h2>
+		<h2 class="f2 b lh-title tc mb3 ff-title" style='color: #afefe7;'>Read it 🥂.</h2>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
+		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3 ff-pagraph">
 			{{ range where .Data.Pages "Type" "post" }}
 			<div class="ph1-ns w-50-ns flex">
 				{{ .Render "li" }}
@@ -11,16 +11,10 @@
 			{{ end }}
 		</div>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range where .Data.Pages "Type" "post1" }}
-			<div class="ph1-ns w-50-ns flex">
-				{{ .Render "li" }}
-			</div>
-			{{ end }}
-		</div>
+
 
 		<div class="tc">
-			<a href="/post" class="btn raise">Leer más</a>
+			<a href="/post" class="btn raise">Read more</a>
 		</div>
 	</div>
 </div>

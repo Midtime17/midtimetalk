@@ -19,8 +19,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site"];
 
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
-gulp.task("build", ["css", "js", "cms-assets", "hugo"]);
-gulp.task("build-preview", ["css", "js", "cms-assets", "hugo-preview"]);
+gulp.task("build", ["css", "fonts", "js", "cms-assets", "hugo"]);
+gulp.task("build-preview", ["css", "js", "fonts", "cms-assets", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -33,10 +33,15 @@ gulp.task("css", () => (
     .pipe(browserSync.stream())
 ));
 
+gulp.task("fonts", () => (
+  gulp.src("./src/fonts/*")
+    .pipe(gulp.dest("./dist/fonts"))
+));
+
 gulp.task("cms-assets", () => (
   gulp.src("./node_modules/netlify-cms/dist/*.{woff,eot,woff2,ttf,svg,png}")
     .pipe(gulp.dest("./dist/css"))
-))
+));
 
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
@@ -68,7 +73,7 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
+gulp.task("server", ["hugo", "css", "fonts", "cms-assets", "js", "svg"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
