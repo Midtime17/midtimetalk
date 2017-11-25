@@ -11,6 +11,8 @@ import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
 import replace from "gulp-replace";
+import imageop from 'gulp-image-optimization';
+const imagemin = require('gulp-imagemin');
 import cssnano from "cssnano";
 
 const browserSync = BrowserSync.create();
@@ -19,8 +21,8 @@ const defaultArgs = ["-d", "../dist", "-s", "site"];
 
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
-gulp.task("build", ["css", "fonts", "js", "cms-assets", "hugo"]);
-gulp.task("build-preview", ["css", "js", "fonts", "cms-assets", "hugo-preview"]);
+gulp.task("build", ["css", "fonts", "images", "js", "cms-assets", "hugo"]);
+gulp.task("build-preview", ["css", "js", "images", "fonts", "cms-assets", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -32,6 +34,13 @@ gulp.task("css", () => (
     .pipe(gulp.dest("./dist/css"))
     .pipe(browserSync.stream())
 ));
+
+
+gulp.task('images', () =>
+gulp.src('.src/static/img/home/*')
+  .pipe(imagemin())
+  .pipe(gulp.dest('.dist/images'))
+);
 
 gulp.task("fonts", () => (
   gulp.src("./src/fonts/*")
@@ -57,6 +66,7 @@ gulp.task("js", (cb) => {
   });
 });
 
+
 gulp.task("svg", () => {
   const svgs = gulp
     .src("site/static/img/icons/*.svg")
@@ -73,7 +83,7 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "fonts", "cms-assets", "js", "svg"], () => {
+gulp.task("server", ["hugo", "css", "images","fonts", "cms-assets", "js", "svg"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"

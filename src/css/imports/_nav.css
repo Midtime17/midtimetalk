@@ -1,0 +1,8 @@
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+  color: #f46a8b;
+  font-weight: bold !important;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: rgba(244,106,139,.8) !important;
+}
