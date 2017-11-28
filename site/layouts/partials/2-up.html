@@ -1,18 +1,18 @@
 
-<div class="bg-off-white pv4 bghome"> 
+<div class="bg-off-white pv4" style= 'background-color: #d9b0b1'> 
 	<div class="ph3 mw7 center">
 
-		<h2 class="f2 b lh-title tc mb ff-title" style='color: #d9b0b1;padding-bottom:3rem'>Grab a snack and enjoy our post!</h2>
+		<h2 class="jumbotron f2 b lh-title tc mb ff-title bghome" style='color: #d9b0b1;padding-bottom:1rem; padding-top:1rem'>Grab a snack and enjoy our post!</h2>
 
-		<div class="w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph">
+		<div class="jumbotron w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph bghome" style= 'padding-bottom:3rem'>
 			{{ range where .Data.Pages "Type" "post" }}
-			<div class="ph2-ns w-50-ns flex">
+			<div class="ph2-ns w-50-ns flex ">
 				{{ .Render "li" }}
 			</div>
 			{{ end }}
 		</div>
 
-<div class="tc" style= 'padding-top:1rem; padding-bottom:1rem'>
+<div class="tc" style= 'padding-bottom:1rem'>
 			<a href="/post" class="btn raise">Read more</a>
 		</div>
 
