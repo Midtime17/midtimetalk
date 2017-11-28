@@ -1,4 +1,6 @@
-<div class="card-columns jumbotron">
+
+
+<div class="card-columns jumbotron" style= 'background-color: #786060'>
   <div class="card">
     <img class="rounded mx-auto d-block card-img-top w-60" src="img/home/hand-shake.png" alt="Branding pack">
     <div class="card-body">
@@ -25,9 +27,9 @@
   <div class="card bg-primary text-white text-center p-3">
     <blockquote class="blockquote mb-0 b">
       <p>We understand that today's world spin out around social networks; influencers, stores, businesses can be found in them. So it's to be expected that for your business to thrive you have to be in social media!</p>
-      <footer class="blockquote-footer">
+      <footer class="blockquote-footer i">
         <small>
-          <cite title="Source Title" style= "color: white"> Midtime Talk founder</cite>
+          <cite title="Source Title " style= "color: white"> Midtime Talk founders</cite>
         </small>
       </footer>
     </blockquote>
@@ -36,8 +38,8 @@
   </div>
   <div class="card">
     <img class="rounded mx-auto d-block card-img w-60"style= 'padding-top:1rem' src="img/home/responsive.png" alt="Social pack">
-    <h4 class="card-title primary b text-center">SOCIAL MEDIA PACK</h4>
-    <p class="card-text text-center">We are here giving you the ideal tool to achieve your goals in social media.</p>
+    <h4 class="card-title primary b text-center" >SOCIAL MEDIA PACK</h4>
+    <p class="card-text text-center" style= 'padding-bottom:1rem'>We are here giving you the ideal tool to achieve your goals in social media.</p>
   </div>
   
   <div class="card">
@@ -51,24 +53,4 @@
   <div class="tc" style= 'padding-top:1rem'>
 			<a href="/products" class="btn raise">Read more about our services</a>
 		</div>
-</div>
-<div class="bg-off-white pv4"> 
-	<div class="ph3 mw7 center">
-
-		<h2 class="f2 b lh-title tc mb ff-title" style='color: #d9b0b1;padding-bottom:3rem'>Grab a snack and enjoy our post!</h2>
-
-		<div class="w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph">
-			{{ range where .Data.Pages "Type" "post" }}
-			<div class="ph2-ns w-50-ns flex">
-				{{ .Render "li" }}
-			</div>
-			{{ end }}
-		</div>
-
-
-
-		<div class="tc" style= 'padding-top:1rem'>
-			<a href="/post" class="btn raise">Read more</a>
-		</div>
-	</div>
 </div>

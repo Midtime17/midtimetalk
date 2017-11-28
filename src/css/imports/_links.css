@@ -1,7 +1,7 @@
 .link {
   text-decoration: none;
   transition: var(--hover-transition);
-  color: #d9b0b1;
+  color: #0a0603;
 }
 
 .link:link,
