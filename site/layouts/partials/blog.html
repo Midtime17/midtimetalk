@@ -1,77 +1,65 @@
-<div class="card-columns">
+<div class="card-columns jumbotron">
   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="rounded mx-auto d-block card-img-top w-60" src="img/services/hand-shake.png" alt="Branding pack">
     <div class="card-body">
-      <h4 class="card-title">Card title that wraps to a new line</h4>
-      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <h4 class="card-title primary b text-center">BRANDING PACK</h4>
+      <p class="card-text text-center">Create from scratch your brand with us. Step by step it will become a reality, your reality!</p>
     </div>
   </div>
   <div class="card p-3">
-    <blockquote class="blockquote mb-0 card-body">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
+    <card class=" mb-0 card-body">
+        <h4 class=" card-title primary b text-center">LOGO DESIGN PACK</h4>
+        <img class=" rounded mx-auto d-block card-img w-70"  src="img/services/paint-tools.png" alt="Logo design pack">
+        
+        <p class="card-text text-center" style= 'padding-top:1rem'>You have the perfect idea about what you want to do but don’t know how to delivery it in a extraordinary, unique and visual way? This pack is for you honey!</p>
+  
     </blockquote>
   </div>
   <div class="card">
-    <img class="card-img-top" src="..." alt="Card image cap">
+    <img class="rounded mx-auto d-block card-img-top w-60" style= 'padding-top:1rem' src="img/services/stationery.png" alt="Stationery pack">
     <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h1 class="card-title b primary text-center">STATIONERY PACK</h1>
+      <p class="card-text text-center">Dream logo design? check, outstanding branding? check. Well, now it is time for your professional stationery to be in that list!</p>
     </div>
   </div>
   <div class="card bg-primary text-white text-center p-3">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.</p>
+    <blockquote class="blockquote mb-0 b">
+      <p>We understand that today's world spin out around social networks; influencers, stores, businesses can be found in them. So it's to be expected that for your business to thrive you have to be in social media!</p>
       <footer class="blockquote-footer">
         <small>
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          <cite title="Source Title" style= "color: white"> Midtime Talk founder</cite>
         </small>
       </footer>
     </blockquote>
-  </div>
-  <div class="card text-center">
-    <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-    </div>
+
+
   </div>
   <div class="card">
-    <img class="card-img" src="..." alt="Card image">
+    <img class="rounded mx-auto d-block card-img w-60"style= 'padding-top:1rem' src="img/services/responsive.png" alt="Social pack">
+    <h4 class="card-title primary b text-center">SOCIAL MEDIA PACK</h4>
+    <p class="card-text text-center">We are here giving you the ideal tool to achieve your goals in social media.</p>
   </div>
-  <div class="card p-3 text-right">
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">
-        <small class="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
-        </small>
-      </footer>
-    </blockquote>
-  </div>
+  
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Card title</h4>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h4 class="card-title b text-center primary">CONSULTANCY PACK</h4>
+      <img class="rounded mx-auto d-block card-img w-60" src="img/services/idea.png" alt="Consultancy pack">
+      <p class="card-text text-center" style= 'padding-top:1rem'>We can create personalized marketing strategies for you. We can develop a marketing strategy you already have visually through design. We can boost your brand and business with the best message for your ideal audience. We can advise on topics of audiovisual, marketing, advertising, brand and much more. </p>
+    
     </div>
   </div>
+  <div class="tc" style= 'padding-top:1rem'>
+			<a href="/products" class="btn raise">Read more about our services</a>
+		</div>
 </div>
-
-
 <div class="bg-off-white pv4"> 
 	<div class="ph3 mw7 center">
 
-		<h2 class="f2 b lh-title tc mb3 ff-title" style='color: #afefe7;'>Read it 🥂.</h2>
+		<h2 class="f2 b lh-title tc mb ff-title" style='color: #d9b0b1;padding-bottom:3rem'>Grab a snack and enjoy our post!</h2>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3 ff-pagraph">
+		<div class="w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph">
 			{{ range where .Data.Pages "Type" "post" }}
-			<div class="ph1-ns w-50-ns flex">
+			<div class="ph2-ns w-50-ns flex">
 				{{ .Render "li" }}
 			</div>
 			{{ end }}
@@ -79,7 +67,7 @@
 
 
 
-		<div class="tc">
+		<div class="tc" style= 'padding-top:1rem'>
 			<a href="/post" class="btn raise">Read more</a>
 		</div>
 	</div>

@@ -33,7 +33,7 @@
 		margin-bottom: var(--spacing-medium);
 		margin-left: 0;
 		margin-right: 0;
-		max-width: 100%;
+		max-width: 50%;
 	}
 
 	/* Links */
@@ -41,8 +41,8 @@
 		color: var(--primary);
 		transition: var(--hover-transition);
 		&:hover {
-			background-color: var(--highlight);
-			color: var(--black);
+			background-color: var(--primary);
+			color: var(--primary);
 		}
 	}
 
