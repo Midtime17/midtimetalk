@@ -1,4 +1,4 @@
 .bghome {
-  background-image: url("/img/home/marblebg.jpg");
+  background-image: url("../img/home/marblebg.jpg");
   background-size: cover;
 }
