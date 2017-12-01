@@ -1,3 +1,4 @@
+
 {{ partial "head" . }} {{ partial "nav" . }}
 <div class="mw6 center ph3 pv4">
   <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
@@ -6,9 +7,10 @@
     <p>Read in {{ .ReadingTime }} minutos</p>
   </div>
   <div class="cms mw6">
-    <p>{{ .Description }}</p>
+    <p class= "text-center">{{ .Description }}</p>
     {{ if .Params.image }}
     <img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }} {{ .Content }}
+    <div class="fb-comments" data-href="https://midtimetalk.netlify.com/" data-width="550" data-numposts="8"></div>
   </div>
 </div>
 {{ partial "footer" . }}
