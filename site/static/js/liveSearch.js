@@ -1,6 +1,6 @@
 // The first key the Application ID, the second is the Search-Only Key
 // Both are safe to be in source control ;)
-const algolia = algoliasearch("B9WBIO9NS3", "97d6742ea7439cb3d8899b85fd9de7e6");
+const algolia = algoliasearch("B9WBIO9NS3", "a361ecd1c3f342ad1064dd70e25d79bb");
 const algoliaIndex = algolia.initIndex("kaldi");
 
 
