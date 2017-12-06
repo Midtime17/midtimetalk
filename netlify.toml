@@ -4,5 +4,7 @@
 [build.environment]
   YARN_VERSION = "0.27.5"
 
-[context.deploy-preview]
-  command = "yarn build-preview"
+[template.environment]
+ALGOLIA_ADMIN_ID= "97d6742ea7439cb3d8899b85fd9de7e6"
+STATUSKIT_RESOURCES_LINK = "B9WBIO9NS3"
+

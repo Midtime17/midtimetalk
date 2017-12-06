@@ -1,24 +1,21 @@
-<div class="bg-off-white pv4">
-  <div class="ph3 mw7 center">
-    <h2 class="f2 b lh-title mb2">{{.heading}}</h2>
-    <p class="mb4 mw6">{{.description}}</p>
 
-    <div class="flex-ns mhn2-ns mb3">
-      <div class="ph2-ns w-50-ns">
-        <img src="{{.svg1}}" alt="" class="center db mb3" style="width: 240px">
-        <p>{{.text1}}</p>
-      </div>
+<div class="bg-off-white pv4" style= 'background-color: #d9b0b1'> 
+	<div class="ph3 mw7 center">
 
-      <div class="ph2-ns w-50-ns">
-        <img src="{{.svg2}}" alt="" class="center db mb3" style="width: 240px">
-        <p>{{.text2}}</p>
-      </div>
-    </div>
+		<h2 class="jumbotron f2 b lh-title tc mb ff-title bghome" style='color: #d9b0b1;padding-bottom:1rem; padding-top:1rem'>Grab a snack and enjoy our post!</h2>
 
-    {{ if .buttonText }}
-      <div class="tc">
-        <a href="{{.buttonLink}}" class="btn raise">{{.buttonText}}</a>
-      </div>
-    {{ end }}
-  </div>
+		<div class="jumbotron w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph bghome" style= 'padding-bottom:3rem'>
+			{{ range where .Data.Pages "Type" "post" }}
+			<div class="ph2-ns w-50-ns flex ">
+				{{ .Render "li" }}
+			</div>
+			{{ end }}
+		</div>
+
+<div class="tc" style= 'padding-bottom:1rem'>
+			<a href="/post" class="btn raise">Read more</a>
+		</div>
+
 </div>
+
+

@@ -10,17 +10,45 @@ import webpackConfig from "./webpack.conf";
 import svgstore from "gulp-svgstore";
 import svgmin from "gulp-svgmin";
 import inject from "gulp-inject";
-import replace from "gulp-replace";
+import reduce from "gulp-reduce-async";
+import {attempt, isError} from "lodash";
+const imagemin = require("gulp-imagemin");
+import algoliasearch from "algoliasearch";
 import cssnano from "cssnano";
+import runSequence from "run-sequence";
+
+import fs from "fs";
+import rename from "gulp-rename";
+
+import S from "string";
 
 const browserSync = BrowserSync.create();
 const hugoBin = `./bin/hugo.${process.platform === "win32" ? "exe" : process.platform}`;
 const defaultArgs = ["-d", "../dist", "-s", "site"];
 
+const development = process.env.ALGOLIA_ID === undefined;
+let algoliaIndex;
+let env;
+
+if (development) {
+  env = attempt(() => require("./config/env.js"));
+  env = isError(env) ? null : env.default;
+}
+
+if (!development || env) {
+  const ALGOLIA_ID = !development ? process.env.ALGOLIA_ID : env && env.ALGOLIA_ID;
+  const ALGOLIA_ADMIN_ID = !development ? process.env.ALGOLIA_ADMIN_ID : env && env.ALGOLIA_ADMIN_ID;
+  const algolia = algoliasearch(ALGOLIA_ID, ALGOLIA_ADMIN_ID);
+  algoliaIndex = algolia.initIndex("midtime");
+}
+
 gulp.task("hugo", (cb) => buildSite(cb));
 gulp.task("hugo-preview", (cb) => buildSite(cb, ["--buildDrafts", "--buildFuture"]));
-gulp.task("build", ["css", "js", "cms-assets", "hugo"]);
-gulp.task("build-preview", ["css", "js", "cms-assets", "hugo-preview"]);
+gulp.task("build", function(callback) {
+  runSequence(["css", "fonts", "images", "js", "cms-assets", "hugo"], "send-index-to-algolia");
+});
+
+gulp.task("build-preview", ["css", "js", "images", "fonts", "cms-assets", "hugo-preview"]);
 
 gulp.task("css", () => (
   gulp.src("./src/css/*.css")
@@ -33,10 +61,22 @@ gulp.task("css", () => (
     .pipe(browserSync.stream())
 ));
 
+
+gulp.task("images", () =>
+gulp.src(".src/static/img/home/*")
+  .pipe(imagemin())
+  .pipe(gulp.dest(".dist/images"))
+);
+
+gulp.task("fonts", () => (
+  gulp.src("./src/fonts/*")
+    .pipe(gulp.dest("./dist/fonts"))
+));
+
 gulp.task("cms-assets", () => (
   gulp.src("./node_modules/netlify-cms/dist/*.{woff,eot,woff2,ttf,svg,png}")
     .pipe(gulp.dest("./dist/css"))
-))
+));
 
 gulp.task("js", (cb) => {
   const myConfig = Object.assign({}, webpackConfig);
@@ -51,6 +91,7 @@ gulp.task("js", (cb) => {
     cb();
   });
 });
+
 
 gulp.task("svg", () => {
   const svgs = gulp
@@ -68,7 +109,7 @@ gulp.task("svg", () => {
     .pipe(gulp.dest("site/layouts/partials/"));
 });
 
-gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
+gulp.task("server", ["hugo", "css", "images", "fonts", "cms-assets", "js", "svg"], () => {
   browserSync.init({
     server: {
       baseDir: "./dist"
@@ -78,6 +119,70 @@ gulp.task("server", ["hugo", "css", "cms-assets", "js", "svg"], () => {
   gulp.watch("./src/css/**/*.css", ["css"]);
   gulp.watch("./site/static/img/icons/*.svg", ["svg"]);
   gulp.watch("./site/**/*", ["hugo"]);
+});
+
+gulp.task("send-index-to-algolia", ["index-site"], function() {
+  console.log("=====================================");
+  const index = JSON.parse(fs.readFileSync("./PagesIndex.json", "utf8"));
+  return algoliaIndex.addObjects(index);
+});
+
+gulp.task("index-site", (cb) => {
+  var pagesIndex = [];
+
+  return gulp.src("dist/**/*.html")
+    .pipe(reduce(function(memo, content, file, cb) {
+
+      var section      = S(file.path).chompLeft(file.cwd + "/dist").between("/", "/").s,
+        title        = S(content).between("<title>", "</title").collapseWhitespace().chompRight(" | Midtime").s,
+        pageContent  = S(content).stripTags().collapseWhitespace().s,
+        href         = S(file.path).chompLeft(file.cwd + "/dist").s,
+        pageInfo     = new Object(),
+        isRestricted = false,
+        blacklist    = [
+          "/page/",
+          "/tags/",
+          "/tags/",
+          "/pages/index.html",
+          "/thanks",
+          "404"
+        ];
+
+      // fixes homepage title
+      if (href === "/index.html") {
+        title = "Homepage";
+      }
+
+      // remove trailing "index.html" from qualified paths
+      if (href.indexOf("/index.html") !== -1) {
+        href = S(href).strip("index.html").s;
+      }
+
+      // determine if this file is restricted
+      for (const ignoredString of blacklist) {
+        if (href.indexOf(ignoredString) !== -1) {
+          isRestricted = true;
+          break;
+        }
+      }
+
+      // only push files that aren"t ignored
+      if (!isRestricted) {
+        pageInfo["objectID"] = href;
+        pageInfo["section"] = section;
+        pageInfo["title"]   = title;
+        pageInfo["href"]    = href;
+        pageInfo["content"] = pageContent;
+
+        pagesIndex.push(pageInfo);
+      }
+
+      console.log("test");
+
+      cb(null, JSON.stringify(pagesIndex));
+    }, "{}"))
+    .pipe(rename("PagesIndex.json"))
+    .pipe(gulp.dest("./"));
 });
 
 function buildSite(cb, options) {

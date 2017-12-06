@@ -1,26 +1,60 @@
-<div class="bg-off-white pv4">
-	<div class="ph3 mw7 center">
+<div class="card-columns jumbotron bghome" style='background-color: #A18485'>
+  <div class="card">
+    <img class="rounded mx-auto d-block card-img-top w-30" src="img/home/hand-shake.png" alt="Branding pack">
+    <div class="card-body">
+      <h4 class="card-title primary b text-center">BRANDING PACK</h4>
+      <p class="card-text text-center">Create from scratch your brand with us. Step by step it will become a reality, your reality!</p>
+    </div>
+  </div>
+  <div class="card p-3">
+    <card class=" mb-0 card-body">
+      <h4 class=" card-title primary b text-center">LOGO DESIGN PACK</h4>
+      <img class=" rounded mx-auto d-block card-img w-30" src="img/home/paint-tools.png" alt="Logo design pack">
 
-		<h2 class="f2 b lh-title mb3">Ultima historia</h2>
+      <p class="card-text text-center" style='padding-top:1rem'>You have the perfect idea about what you want to do but don’t know how to delivery it in a extraordinary, unique and
+        visual way? This pack is for you honey!</p>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range where .Data.Pages "Type" "post" }}
-			<div class="ph1-ns w-50-ns flex">
-				{{ .Render "li" }}
-			</div>
-			{{ end }}
-		</div>
+      </blockquote>
+  </div>
+  <div class="card">
+    <img class="rounded mx-auto d-block card-img-top w-30" style='padding-top:1rem' src="img/home/stationery.png" alt="Stationery pack">
+    <div class="card-body">
+      <h1 class="card-title b primary text-center">STATIONERY PACK</h1>
+      <p class="card-text text-center">Dream logo design? check, outstanding branding? check. Well, now it is time for your professional stationery to be
+        in that list!</p>
+    </div>
+  </div>
+  <div class="card bg-primary text-white text-center p-3">
+    <blockquote class="blockquote mb-0 b">
+      <p>We understand that today's world spin out around social networks; influencers, stores, businesses can be found in them.
+        So it's to be expected that for your business to thrive you have to be in social media!</p>
+      <footer class="blockquote-footer i">
+        <small>
+          <cite title="Source Title " style="color: white"> Midtime Talk founders</cite>
+        </small>
+      </footer>
+    </blockquote>
 
-		<div class="w-100 flex-ns mhn1-ns flex-wrap mb3">
-			{{ range where .Data.Pages "Type" "post1" }}
-			<div class="ph1-ns w-50-ns flex">
-				{{ .Render "li" }}
-			</div>
-			{{ end }}
-		</div>
 
-		<div class="tc">
-			<a href="/post" class="btn raise">Leer más</a>
-		</div>
-	</div>
+  </div>
+  <div class="card">
+
+    <img class="rounded mx-auto d-block card-img w-30" style='padding-top:1rem' src="img/home/responsive.png" alt="Social pack">
+    <h4 class="card-title primary b text-center" style='padding-top:1rem'>SOCIAL MEDIA PACK</h4>
+    <p class="card-text text-center" style='padding-bottom:1rem'>We are here giving you the ideal tool to achieve your goals in social media.</p>
+  </div>
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title b text-center primary">CONSULTANCY PACK</h4>
+      <img class="rounded mx-auto d-block card-img w-30" src="img/home/idea.png" alt="Consultancy pack">
+      <p class="card-text text-center" style='padding-top:1rem'>We can create personalized marketing strategies for you. We can develop a marketing strategy you already have visually
+        through design. We can boost your brand and business with the best message for your ideal audience. We can advise
+        on topics of audiovisual, marketing, advertising, brand and much more. </p>
+
+    </div>
+  </div>
+  <div class="tc" style='padding-top:1rem'>
+    <a href="/products" class="btn raise">Read more about our services</a>
+  </div>
 </div>

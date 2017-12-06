@@ -1,10 +1,20 @@
-<form action="" class="flex-ns mb3">
+<form data-netlify="true" name="newsletter">
+    <div class="form-group ff-title">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" name= "email" class="form-control primary" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email">
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group ff-title">
+        <input type="text" name= "name" class="form-control" placeholder="First name">  
+    </div>
+    <div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input">
+        Check me out
+      </label>
+    </div>
+    <button class="btn mb3 w-100 w-auto-ns mb0-ns raise ff-title"  type="submit">Submit</button>
+  
+  </form>
 
-  <fieldset class="flex-auto mb2 mb0-ns mr2-ns" name="newsletter" action="newsletter-subscribe">
-    <input type="text" id="email" placeholder="Your email" class="w-100">
-    <label for="email">Your email</label>
-  </fieldset>
-
-  <button class="btn mb3 w-100 w-auto-ns mb0-ns raise" type="submit">Submit</button>
-
-</form>
+ 

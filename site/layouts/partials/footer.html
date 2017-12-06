@@ -1,56 +1,88 @@
-<footer class="bg-black ph3 pv4 white">
+<footer class=" jumbotron ph3 pv4 black bghome" style='background-color: white'>
 
 	<div class="mw7 center pt3">
 
 		<div class="measure-narrow center mb4">
 
-			<img src="/img/../img/logo.png" alt="Kaldi logo" class="db w4 center mb4 br0">
-			<p class="f3 lh-title light-gray b tc mb2">Newsletter subscribe</p>
-			<p>Get awesome news from us in your inbox every two weeks. Be the first to learn about new products.</p>
+			<img src="/img/home/msolafinal.png" alt="m midtime logo" class="db w4 center mb4 br0">
+			<h1 class="f3 lh-title  b tc mb2 h" style='color: #d9b0b1;text-shadow: 1px 1px #6b6a6a'>Subscribe </h1>
+			<p class="tc" style='font-family:Raleway'> Get awesome snacks in your inbox and enjoy The Midtime Talk any moment.</p>
 
 			{{ partial "newsletter-form" . }}
 
 		</div>
 
-		<div class="flex-ns justify-between">
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Kaldi</h3>
-				<ul class="mb3">
-					<li><a href="/" class="link">Home</a></li>
-					<li><a href="/products" class="link">Our products</a></li>
-					<li><a href="/values" class="link">About</a></li>
-					<li><a href="/post" class="link">Blog</a></li>
-					<li><a href="/contact" class="link">Contact</a></li>
-				</ul>
+	
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+						<div>
+						<h3 class="f4 b lh-title mb1 primary tc" style='text-shadow: 1px 1px #6b6a6a'>The Midtime Talk</h3>
+						<ul class="mb3 tc" style='font-family:raleway'>
+							<li>
+								<a href="/" class="link">Home sweet home</a>
+							</li>
+							<li>
+								<a href="/products" class="link">Our services</a>
+							</li>
+							<li>
+								<a href="/values" class="link">About us</a>
+							</li>
+							<li>
+								<a href="/post" class="link">Blog</a>
+							</li>
+							<li>
+								<a href="/portfolio" class="link">Our work 🗃</a>
+							</li>
+								</ul>
+							</div>
+				</div>
+				<div class="col-sm">
+						<div>
+						<h3 class="f4 b lh-title mb1 primary tc" style='text-shadow: 1px 1px #6b6a6a'>Let's meet up!</h3>
+						<ul class="mb3 tc" style='font-family:raleway'>
+							<li>
+								<a href="/post/jamaica-blue/" class="link">Our latest midtime talk</a>
+							</li>
+							<li>
+								<a href="/contact" class="link">Come talk to us 🤳🏻</a>
+							</li>
+								</ul>
+							</div>
+				</div>
+				<div class="col-sm">
+						<div>
+						<h3 class="f4 b lh-title mb1 primary tc" style='text-shadow: 1px 1px #6b6a6a'>Follow us</h3>
+								<ul class="mhn2 tc">
+									
+								
+									{{ partial "social-icon" (dict "link" "https://www.facebook.com/The-Midtime-Talk-288660084960736/" "svg" "facebook") }}
+									<!--{{ partial "social-icon" (dict "link" "#" "svg" "twitter") }}-->
+									{{ partial "social-icon" (dict "link" "https://www.instagram.com/midtimetalk/" "svg" "instagram") }}
+									{{ partial "social-icon" (dict "link" "https://www.pinterest.com/midtimetalk/pins/" "svg" "pinterest") }}
+									
+									<!--{{ partial "social-icon" (dict "link" "#" "svg" "vimeo") }}-->
+								</ul>
+							</div>
+				</div>
 			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb1 primary">Find out more</h3>
-				<ul class="mb3">
-					<li><a href="/post/jamaica-blue/" class="link">Latest offers</a></li>
-					<li><a href="/contact" class="link">Schedule and appointment</a></li>
-				</ul>
-			</div>
-
-			<div>
-				<h3 class="f4 b lh-title mb2 primary">Social media</h3>
-				<ul class="mhn2">
-					{{ partial "social-icon" (dict "link" "#" "svg" "facebook") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "twitter") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "instagram") }}
-					{{ partial "social-icon" (dict "link" "#" "svg" "vimeo") }}
-				</ul>
-			</div>
-
 		</div>
-	</div>
 
 </footer>
 
 {{ partial "svg" . }}
 
 <script src="/app.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+ crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+ crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+ crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/algoliasearch/3.24.3/algoliasearch.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/instantsearch.js@2.1.1/dist/instantsearch.min.js"></script>
+ <script src="/js/liveSearch.js"></script>
+ 
 
 </body>
 

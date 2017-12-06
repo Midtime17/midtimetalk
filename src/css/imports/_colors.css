@@ -37,15 +37,15 @@
 }
 
 .bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
 }
 
 .bg-highlight {
-  background-color: --var(--highlight);
+  background-color: --var(--highlight) !important;
 }
 
 .bg-white {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 .bg-off-white {
@@ -61,15 +61,15 @@
 }
 
 .bg-grey-3 {
-  background-color: var(--grey-4);
+  background-color: var(--grey-3);
 }
 
 .bg-grey-4 {
   background-color: var(--grey-4);
 }
 
-.bg-black {
-  background-color: var(--black);
+.bg-grey-5 {
+  background-color: var(--grey-5);
 }
 
 .bg-fix-primary {
