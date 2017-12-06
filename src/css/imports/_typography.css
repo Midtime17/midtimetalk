@@ -20,17 +20,17 @@ body {
  }
 
  h2, h1, h3, h4 {
-   font-family: 'Satisfy'
+   font-family: 'arapey'
  }
 
  fieldset {
-   font-family: 'Cardo'
+   font-family: 'Quicksand'
  }
  
 p {
   margin-bottom: var(--spacing-medium);
   max-width: 32rem;
-  font-family: 'Cardo'
+  font-family: 'Quicksand'
 }
 
 strong {

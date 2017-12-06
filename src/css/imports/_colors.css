@@ -37,15 +37,15 @@
 }
 
 .bg-primary {
-  background-color: var(--primary);
+  background-color: var(--primary) !important;
 }
 
 .bg-highlight {
-  background-color: --var(--highlight);
+  background-color: --var(--highlight) !important;
 }
 
 .bg-white {
-  background-color: var(--white);
+  background-color: var(--white) !important;
 }
 
 .bg-off-white {

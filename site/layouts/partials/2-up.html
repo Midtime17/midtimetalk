@@ -1,49 +1,21 @@
-<div class="bg-off-white pv4">
-  <div class="ph5 mw7 center tc">
-    <h2 class="f1 b lh-title mb1 tc ff-title"   style='color: #afefe7;'>{{.heading}}</h2>
-    <p class="mb5 mw9 tc"></p>{{.description}}</p>
 
-    <div class="flex-ns mhn2-ns mb3">
-      <div class="ph2-ns w-50-ns tc"> 
-        <img src="{{.svg1}}" alt="" class="center db mb3" style=" width: 90%">
-        <p>{{.text1}}</p>
-      </div>
+<div class="bg-off-white pv4" style= 'background-color: #d9b0b1'> 
+	<div class="ph3 mw7 center">
 
-      <div class="ph2-ns w-50-ns tc"> 
-        <img src="{{.svg2}}" alt="" class="center db mb3" style=" width: 90%">
-        <p>{{.text2}}</p>
-      </div>
-    </div>
+		<h2 class="jumbotron f2 b lh-title tc mb ff-title bghome" style='color: #d9b0b1;padding-bottom:1rem; padding-top:1rem'>Grab a snack and enjoy our post!</h2>
 
+		<div class="jumbotron w-100 flex-ns mhn6-ns flex-wrap mb3 ff-pagraph bghome" style= 'padding-bottom:3rem'>
+			{{ range where .Data.Pages "Type" "post" }}
+			<div class="ph2-ns w-50-ns flex ">
+				{{ .Render "li" }}
+			</div>
+			{{ end }}
+		</div>
 
-   <div class="flex-ns mhn2-ns mb3">
-      <div class="ph2-ns w-50-ns tc"> 
-        <img src="{{.svg3}}" alt="" class="center db mb3" style="width: 90%">
-         <p>{{.text3}} <br/>{{.text8}}</p>
-         <p>{{.text9}}</p>
-       </div>
+<div class="tc" style= 'padding-bottom:1rem'>
+			<a href="/post" class="btn raise">Read more</a>
+		</div>
 
-       <div class="ph2-ns w-50-ns tc"> 
-        <img src="{{.svg4}}" alt="" class="center db mb3" style="width: 90%">
-        <p>{{.text4}} <br/>{{.text10}}</p>
-        <p>{{.text11}}</p>
-      </div>
-    </div>
-
-
-       <div class=" inner ph2-ns w-50-ns tc"> 
-          <img src="{{.svg5}}" alt="" class="center db mb3" style="width: 90%">
-          <p>{{.text5}} <br/>{{.text6}}</p>
-          <p>{{.text7}}</p>
-        </div>
-      </div>
-  
-
-      
-    {{ if .buttonText }}
-      <div class="tc">
-        <a href="{{.buttonLink}}" class="btn raise">{{.buttonText}}</a>
-      </div>
-    {{ end }}
-  </div>
 </div>
+
+

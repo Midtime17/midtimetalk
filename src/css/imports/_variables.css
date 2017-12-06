@@ -3,14 +3,14 @@
 
 :root {
 	/* Colors */
-	--primary: #F46A8B;
-	--highlight: #AFEFE7;
+	--primary: #d9b0b1;
+	--highlight: #d9b0b1;
 	--white: #f8f7f7;
 	--off-white: rgba(255, 253, 252, 1);
 	--grey-1: #dddbdb;
 	--grey-2: #ffffff;
-	--grey-3: #cddc39;
-	--grey-4: rgba(66, 64, 64, 1);
+	--grey-3: #d9b0b1;
+	--grey-4: #0a0603;
 	--grey-5: rgb(245, 245, 245);
 
 	/* Typography */
