@@ -4,12 +4,14 @@
   <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
   <div class="flex justify-between grey-3">
     <p>{{ .Date.Format "Mon, Jan 2, 2006" }}</p>
-    <p>Read in {{ .ReadingTime }} minutos</p>
+    <p>Read in {{ .ReadingTime }} minutes</p>
   </div>
   <div class="cms mw6">
-    <p class= "text-center">{{ .Description }}</p>
+    <p class= "justify">{{ .Description }}</p>
     {{ if .Params.image }}
-    <img src="{{ .Params.image }}" alt="{{ .Title }}" />{{ end }} {{ .Content }}
+    <center>
+    <img  src="{{ .Params.image }}" alt="{{ .Title }}" />  </center> {{ end }} {{ .Content }}
+
     <div class="fb-comments" data-href="https://midtimetalk.netlify.com/" data-width="550" data-numposts="8"></div>
   </div>
 </div>
